@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTreeView"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TreeView x:Name="FolderView">
+            <TreeView.Resources>
+
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Style.Setters>
+                        <Setter Property="HeaderTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Width="25"
+                                               Margin="3"
+                                               Source="/Images/drive.png"/>
+                                        <TextBlock VerticalAlignment="Center"
+                                                   FontSize="20"
+                                                   Text="{Binding}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style.Setters>
+                </Style>
+
+            </TreeView.Resources>
+        </TreeView>
     </Grid>
 </Window>
